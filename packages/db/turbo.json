@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "//"
+  ],
+  "tasks": {
+    "push": {
+      "cache": false,
+      "interactive": true
+    },
+    "studio": {
+      "cache": false,
+      "persistent": true
+    },
+    "generate": {
+      "outputs": [
+        "src/migrations/**"
+      ]
+    },
+    "migrate": {
+      "cache": false
+    }
+  }
+}

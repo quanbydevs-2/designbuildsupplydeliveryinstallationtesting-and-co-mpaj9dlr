@@ -1,0 +1,11 @@
+# Ruler Configuration
+default_agents = ["copilot", "claude", "codex", "cursor", "windsurf", "cline", "aider", "gemini-cli"]
+
+[agents.gemini-cli]
+enabled = true
+
+[agents.qwen]
+enabled = true
+
+[skills]
+enabled = true

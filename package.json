@@ -1,0 +1,37 @@
+{
+  "name": "designbuildsupplydeliveryinstallationtesting-and-commissioni",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.27.0",
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "git clean -xdf node_modules",
+    "dev": "turbo watch dev --continue",
+    "dev:web": "turbo watch dev -F @repo/web...",
+    "dev:backend": "turbo watch dev -F @repo/backend...",
+    "start": "turbo run start",
+    "db:push": "turbo -F @repo/db push",
+    "db:studio": "turbo -F @repo/db studio",
+    "db:generate": "turbo -F @repo/db generate",
+    "db:migrate": "turbo -F @repo/db migrate",
+    "db:seed": "pnpm -F @repo/db seed",
+    "test": "turbo run test",
+    "test:cov": "turbo run test:cov",
+    "lint": "turbo run lint --continue",
+    "lint:fix": "turbo run lint --continue -- --fix",
+    "typecheck": "turbo run typecheck",
+    "format": "turbo run format --continue",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@repo/prettier-config": "workspace:*",
+    "husky": "^9.1.0",
+    "prettier": "^3.7.0",
+    "turbo": "^2.7.0",
+    "typescript": "^5.9.0"
+  },
+  "prettier": "@repo/prettier-config"
+}

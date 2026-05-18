@@ -1,0 +1,19 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    container_name: designbuildsupplydeliveryinstallationtesting-and-commissioni-web-production
+    ports: ["3001:3001"]
+    env_file: [apps/web/.env]
+    depends_on: [backend]
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    container_name: designbuildsupplydeliveryinstallationtesting-and-commissioni-backend-production
+    ports: ["3000:3000"]
+    env_file: [apps/backend/.env]
+    restart: unless-stopped

@@ -1,0 +1,1 @@
+{ "extends": "@repo/tsconfig/pkg.json", "compilerOptions": { "outDir": "dist" }, "include": ["src"] }

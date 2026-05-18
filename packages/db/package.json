@@ -1,0 +1,39 @@
+{
+  "name": "@repo/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./schema": {
+      "types": "./dist/schema.d.ts",
+      "default": "./dist/schema.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "push": "pnpm build && drizzle-kit push",
+    "studio": "pnpm build && drizzle-kit studio",
+    "generate": "pnpm build && drizzle-kit generate",
+    "migrate": "pnpm build && drizzle-kit migrate",
+    "seed": "pnpm push && tsx src/seed.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.44.0",
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.16.0",
+    "dotenv": "^16.6.0",
+    "drizzle-kit": "^0.31.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.0"
+  }
+}
